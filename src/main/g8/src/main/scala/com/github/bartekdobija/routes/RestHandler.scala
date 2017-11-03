@@ -27,10 +27,9 @@ class RestHandler(private val handlerActor: ActorRef)
             onSuccess((handlerActor ? Ping("1", "ping")).mapTo[Pong]) { res =>
               complete(res)
             }
-          } ~
-            path("monitor") {
-              complete(s"monitor: ${System.currentTimeMillis}")
-            }
+          } ~ path("monitor") {
+            complete(s"monitor: \${System.currentTimeMillis}")
+          }
         }
       }
     }
