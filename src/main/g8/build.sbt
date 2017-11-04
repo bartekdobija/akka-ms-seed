@@ -1,4 +1,5 @@
 enablePlugins(JavaAppPackaging)
+
 enablePlugins(AshScriptPlugin)
 
 lazy val commonSettings = Seq(
@@ -26,7 +27,7 @@ lazy val akkatest = (project in file("."))
       // akka http used as the client facing API gateway
       "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
       "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
-      "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpVersion % Test,
+      "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpVersion % Test
       //"io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVersion % Test
     )
   )
