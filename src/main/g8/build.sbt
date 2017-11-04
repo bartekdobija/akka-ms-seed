@@ -16,10 +16,10 @@ lazy val gatlingVersion = "2.3.0"
 lazy val baseImage = "openjdk:8-alpine"
 lazy val dockerPort = 8080
 
-lazy val akkatest = (project in file("."))
+lazy val root = (project in file("."))
   .settings(
     commonSettings,
-    name := "akkatest",
+    name := "$name$",
     dockerExposedPorts := Seq(dockerPort),
     dockerBaseImage := baseImage,
     libraryDependencies ++= Seq(
