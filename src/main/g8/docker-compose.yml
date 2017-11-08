@@ -1,0 +1,41 @@
+version: '3.3'
+
+services:
+  zookeeper:
+    image: confluent/zookeeper
+    restart: on-failure
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: confluent/kafka
+    restart: on-failure
+    depends_on:
+      - zookeeper
+    links:
+      - zookeeper
+    ports:
+      - "9092:9092"
+
+  schema_registry:
+    image: confluent/schema-registry
+    restart: on-failure
+    depends_on:
+      - zookeeper
+      - kafka
+    links:
+      - zookeeper
+      - kafka
+    ports:
+      - "8081:8081"
+  ms:
+    image: $name$:0.1
+    #restart: always
+    depends_on:
+      - db
+    links:
+      - db
+      - kafka
+      - zookeeper
+    ports:
+      - "8080:8080"
