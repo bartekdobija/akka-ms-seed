@@ -1,6 +1,15 @@
 version: '3.3'
 
 services:
+
+  cassandra:
+    image: cassandra
+    restart: on-failure
+    ports:
+      - "7000:7000"
+      - "9042:9042"
+      - "9160:9160"
+
   zookeeper:
     image: confluent/zookeeper
     restart: on-failure
@@ -32,6 +41,7 @@ services:
     image: $name$:0.1
     #restart: always
     links:
+      - cassandra
       - kafka
       - zookeeper
     ports:
