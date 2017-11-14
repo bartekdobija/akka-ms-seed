@@ -4,8 +4,6 @@ object Dependencies {
 
   lazy val scalaTestVersion = "3.0.1"
   lazy val akkaHttpVersion = "10.0.10"
-  lazy val scalajHttpVersion = "2.3.0"
-  lazy val dropwizardVersion  = "1.2.0"
   lazy val kafkaVersion = "0.11.0.1"
 
   val akkaService = Seq(
