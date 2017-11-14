@@ -1,10 +1,10 @@
-package com.github.bartekdobija.core
+package $organization$.core
 
 import akka.actor.{ActorSystem, Props}
 import akka.http.scaladsl.{Http, HttpExt}
 import akka.stream.ActorMaterializer
-import com.github.bartekdobija.actors.HandlerActor
-import com.github.bartekdobija.routes.RestHandler
+import $organization$.actors.HandlerActor
+import $organization$.routes.RestHandler
 
 import scala.concurrent.Await
 import scala.concurrent.duration._
@@ -26,7 +26,7 @@ class Service {
     implicit val system: ActorSystem = ActorSystem(Service.DEFAULT_SYSTEM_NAME)
     implicit val materializer: ActorMaterializer = ActorMaterializer()
 
-    val actor = system.actorOf(Props[HandlerActor], HandlerActor.NAME)
+    val actor = system.actorOf(HandlerActor.props(), HandlerActor.NAME)
     val handler = RestHandler(actor).route
 
     http = Http()

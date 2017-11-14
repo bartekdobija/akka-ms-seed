@@ -1,8 +1,8 @@
-package com.github.bartekdobija.marshallers
+package $organization$.marshallers
 
 import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
-import com.github.bartekdobija.actors.HandlerActor.{Ping, Pong}
 import spray.json.DefaultJsonProtocol
+import $organization$.actors.HandlerActor.{Ping, Pong}
 
 trait DefaultMarshaller extends SprayJsonSupport with DefaultJsonProtocol {
   implicit val ping = jsonFormat2(Ping)

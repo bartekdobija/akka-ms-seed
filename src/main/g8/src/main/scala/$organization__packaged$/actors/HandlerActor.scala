@@ -1,13 +1,15 @@
-package com.github.bartekdobija.actors
+package $organization$.actors
 
-import akka.actor.{Actor, ActorLogging}
-import com.github.bartekdobija.actors.HandlerActor.{Ping, Pong}
+import akka.actor.{Actor, ActorLogging, Props}
+import $organization$.actors.HandlerActor.{Ping, Pong}
 
 object HandlerActor {
+  val NAME = getClass.getSimpleName
+
   case class Ping(id: String, pingMsg: String)
   case class Pong(id: String, pongMsg: String)
 
-  val NAME = "handler"
+  def props(): Props = Props(new HandlerActor)
 }
 
 class HandlerActor extends Actor with ActorLogging {

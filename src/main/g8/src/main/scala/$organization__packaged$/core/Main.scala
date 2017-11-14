@@ -1,4 +1,4 @@
-package com.github.bartekdobija.core
+package $organization$.core
 
 object Main {
 

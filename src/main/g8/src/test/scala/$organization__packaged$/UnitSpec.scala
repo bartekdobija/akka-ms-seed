@@ -1,4 +1,4 @@
-package com.github.bartekdobija
+package $organization$
 
 import org.scalatest._
 

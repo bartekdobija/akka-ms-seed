@@ -1,4 +1,4 @@
-package com.github.bartekdobija.actors
+package $organization$.actors
 
 import akka.actor.ActorSystem
 import akka.testkit.{ImplicitSender, TestKit}

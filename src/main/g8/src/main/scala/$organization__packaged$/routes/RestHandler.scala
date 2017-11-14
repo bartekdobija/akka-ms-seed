@@ -1,4 +1,4 @@
-package com.github.bartekdobija.routes
+package $organization$.routes
 
 import akka.actor.ActorRef
 import akka.http.scaladsl.server.{Directives, Route}
@@ -6,8 +6,8 @@ import akka.http.scaladsl.server.{Directives, Route}
 import scala.concurrent.duration._
 import akka.util.Timeout
 import akka.pattern.ask
-import com.github.bartekdobija.actors.HandlerActor.{Ping, Pong}
-import com.github.bartekdobija.marshallers.DefaultMarshaller
+import $organization$.actors.HandlerActor.{Ping, Pong}
+import $organization$.marshallers.DefaultMarshaller
 
 object RestHandler {
   def apply(handlerActor: ActorRef): RestHandler = new RestHandler(handlerActor)

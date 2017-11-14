@@ -1,12 +1,12 @@
-package com.github.bartekdobija.routes
+package $organization$.routes
 
 import akka.actor.{ActorRef, ActorSystem, Props}
 import akka.http.scaladsl.model.ContentTypes
 import akka.http.scaladsl.server.Route
 import akka.http.scaladsl.testkit.ScalatestRouteTest
-import com.github.bartekdobija.UnitSpec
-import com.github.bartekdobija.actors.HandlerActor
-import com.github.bartekdobija.core.Service
+import $organization$.UnitSpec
+import $organization$.actors.HandlerActor
+import $organization$.core.Service
 
 class RestHandlerSpec extends UnitSpec with ScalatestRouteTest {
 

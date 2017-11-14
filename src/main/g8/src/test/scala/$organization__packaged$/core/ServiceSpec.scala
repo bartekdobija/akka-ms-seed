@@ -1,7 +1,7 @@
-package com.github.bartekdobija.core
+package $organization$.core
 
 import akka.http.scaladsl.testkit.ScalatestRouteTest
-import com.github.bartekdobija.UnitSpec
+import $organization$.UnitSpec
 
 class ServiceSpec extends UnitSpec with ScalatestRouteTest {
 
