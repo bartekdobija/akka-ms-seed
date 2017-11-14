@@ -31,10 +31,7 @@ services:
   ms:
     image: $name$:0.1
     #restart: always
-    depends_on:
-      - db
     links:
-      - db
       - kafka
       - zookeeper
     ports:
