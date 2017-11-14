@@ -21,3 +21,8 @@ sbt docker:publishLocal
 ```bash
 docker run -p 8080:8080 <image_id>
 ```
+or
+
+```bash
+docker-compose up
+```
