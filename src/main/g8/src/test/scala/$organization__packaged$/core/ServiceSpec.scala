@@ -11,7 +11,7 @@ class ServiceSpec extends UnitSpec with ScalatestRouteTest {
     service = Service()
   }
 
-  "Service()" must {
+  classOf[Service].getSimpleName must {
     "implement start() method" in {
       service.start() should not be null
     }

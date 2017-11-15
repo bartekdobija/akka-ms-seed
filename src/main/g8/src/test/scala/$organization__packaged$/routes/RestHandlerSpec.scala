@@ -20,7 +20,7 @@ class RestHandlerSpec extends UnitSpec with ScalatestRouteTest {
     route = RestHandler(producer).route
   }
 
-  "Service()" must {
+  classOf[RestHandler].getSimpleName must {
 
     "implement httpRoute method" in {
       route shouldBe a[Route]
