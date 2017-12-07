@@ -14,6 +14,10 @@ object HandlerActor {
 
 class HandlerActor extends Actor with ActorLogging {
 
+  override def preStart(): Unit = {
+
+  }
+
   override def receive: Receive = {
     case Ping(i, s) => sender() ! Pong("pong", "message")
   }
