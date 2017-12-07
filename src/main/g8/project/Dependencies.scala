@@ -5,9 +5,11 @@ object Dependencies {
   lazy val scalaTestVersion = "3.0.1"
   lazy val akkaHttpVersion = "10.0.10"
   lazy val kafkaVersion = "0.11.0.1"
+  lazy val embeddedKafkaVersion = "1.0.0"
 
   val akkaService = Seq(
     "org.scalatest" %% "scalatest" % scalaTestVersion % Test,
+    "net.manub" %% "scalatest-embedded-kafka" % embeddedKafkaVersion % Test,
 
     "org.apache.kafka" % "kafka-clients" % kafkaVersion,
 
