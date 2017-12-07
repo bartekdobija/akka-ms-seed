@@ -20,5 +20,6 @@ class HandlerActor extends Actor with ActorLogging {
 
   override def receive: Receive = {
     case Ping(i, s) => sender() ! Pong("pong", "message")
+    case _ => log.error("received unknown message")
   }
 }
