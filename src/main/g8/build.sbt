@@ -6,7 +6,8 @@ import Dependencies._
 lazy val commonSettings = Seq(
   version := "0.1",
   organization := "$organization$",
-  scalaVersion := "2.12.3"
+  scalaVersion := "2.12.3",
+  ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }
 )
 
 // Docker configuration
